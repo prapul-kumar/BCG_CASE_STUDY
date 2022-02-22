@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  backend:
+    build: backend/.
+    ports:
+      - "8000:8000"
+    container_name: bcg_backend
+    restart: on-failure
+    env_file:
+      - ./.env
+    user: $UID:$GID
+
+  frontend:
+    build:
+      context: ./frontend/
+      args:
+        API_URL: $api_url
+    stdin_open: true
+    container_name: bcg_frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env
+    user: $UID:$GID

@@ -1,0 +1,6 @@
+{
+    "SECRET_KEY" : "django-insecure-g=6rjc06ek(#r#=-ot@bo6ktgt8!#sopocmk08-2&5^ipf@$@t",
+    "DEBUG": true,
+    "ALLOWED_HOSTS": "localhost 127.0.0.1",
+    "CORS_ORIGIN_WHITELIST": "http://localhost:3000 http://127.0.0.1:3000"
+}
